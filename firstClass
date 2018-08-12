@@ -1,0 +1,42 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>练习XSS</title>
+	<style type="text/css" >
+		/*css远程攻击漏洞*/
+		.container{
+			background:url(index.js);
+			color:expression(alert("xss"));
+		}
+		.container::after{
+			content:url(index.js);
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- <script type="text/javascript" src="index.js"></script> -->
+</head>
+ 
+<body>
+	<!-- <img crossorigin="anonymous" src="ok.png"> -->
+	<div class="container" style="padding-top: 20px;">
+		<button onclick="test()">点击测试</button>
+	</div>
+	<script >
+		//测试网速的作用：
+		var s=Date.now();
+		var image = new Image();
+		image.src="http://t2.hddhhn.com/uploads/tu/201707/571/106.jpg";
+		image.onload=function(){
+			var e = Date.now();
+			var w = 84/(e-s);
+			console.log("网速为："+w+"kb")
+		}
+		//image.crossorigin="anonymous";跨域要配合后台服务设置Access-Control-Allow-Origin的header使用，才能实现跨域
+		//上报数据
+		//image.src="http://www.xxx.cm/ss.gif?id=123&name='name'..."
+		//使用img上报数据原理，image的src将数据带入进行请求，并且不需要响应，后台可以使用一个定时流程进行统计数据
+		//css远程攻击漏洞
+
+	</script>
+</body>
+</html
