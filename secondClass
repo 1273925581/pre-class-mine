@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>双飞翼布局</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./css/index.css"> -->
+    <script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <style type="text/css">
+	    .container{
+	    	font-size: 4em;
+	    	overflow: hidden;
+	    }
+    	.left{
+    		background: yellowgreen;
+    		width: 200px;
+    		float: left;
+    		margin-left: -100%;
+    		padding-bottom: 900px;
+    		margin-bottom: -900px;
+    		
+    	}
+    	.middle{
+    		background: #eab8ee;
+    		margin-left: 200px;
+    		padding-bottom: 900px;
+    		margin-bottom: -900px;
+    		
+    	}
+    	.right{
+    		background: #05e1ea;
+    		width: 300px;
+    		float: left;
+    		margin-left: -300px;
+    		padding-bottom: 900px;
+    		margin-bottom: -900px;
+    		
+    	}
+    	.content{
+    		width: 100%;
+    		float: left;
+    	}
+    	.pic{
+    		height: 200px;
+    		background: url(106.jpg);
+    		mix-blend-mode: lighten;
+    	}
+    	.firstLine{
+    		position: absolute;
+    		top:10px;
+    		left: 20%;
+    		background: #fff;
+    		/*height: 100%;
+    		width: 100%;*/
+    	}
+    </style>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<div class="middle">
+				<div class="pic">
+					<div class="firstLine">firstLine</div>
+				</div>
+				<div>secondLine</div>
+			</div>
+		</div>
+		<div class="left">左</div>
+		<div class="right">右</div>
+	</div>
+</body>
+
+</html>
